@@ -7,7 +7,7 @@ app.answersArray = [];
 // Gather answers from radio buttons as users click and push to answer array
 app.answer = $('input[type=radio');
 app.getAnswer = function() {
-  app.answer.on('click', function () {
+  app.answer.on('click touch', function () {
     const answer = $('input[type=radio]:checked').val();
     app.answersArray.push(answer);
     console.log(answer);
@@ -74,7 +74,7 @@ app.numberPages = function (array, array2) {
 }
 // Function to move between pages
 app.number = 0;
-app.movePages = function() {app.answer.on('click touchstart', function(){
+app.movePages = function() {app.answer.on('click touch', function(){
   // Function to populate the final page once user completes the final question
   if (app.number === 29){
     app.positiveAnswers = app.answersArray.reduce(function (allAnswers, answer) {
@@ -96,7 +96,7 @@ app.movePages = function() {app.answer.on('click touchstart', function(){
   });
 }
 // Function to replace other, when a user clicks on "other" the first time
-$('#other').on('click', function(){
+$('#other').on('click touch', function(){
   $('.other').css('left',0);
   $('.other').on('submit', function(e){
     e.preventDefault();
