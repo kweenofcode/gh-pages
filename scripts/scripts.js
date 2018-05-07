@@ -1,5 +1,5 @@
 // Creating an empty object to hold all my data
-app = {};
+const app = {};
 
 // Get user input 
 // Create an empty array for all answers
@@ -17,7 +17,7 @@ app.getAnswer = function() {
 app.body = {
   hair: ['a beard', 'a hairy chest', 'hairy legs', 'a hairy back'],
   piercings: ['pierced ears', 'dangly earrings'],
-  presentation: ['brightly painted eyes', 'brightly painted nails', 'brightly painted lips'],
+  presentation: ['brightly painted eyelids', 'brightly painted nails', 'brightly painted lips'],
   physicalTraits: ['broad shoulders', 'long fingers', 'a small waist', 'large feet', 'a flat chest']
 }
 // Gather the elements to be filled with the unordered questions
@@ -74,7 +74,7 @@ app.numberPages = function (array, array2) {
 }
 // Function to move between pages
 app.number = 0;
-app.movePages = function() {app.answer.on('click', function(){
+app.movePages = function() {app.answer.on('click touchstart', function(){
   // Function to populate the final page once user completes the final question
   if (app.number === 29){
     app.positiveAnswers = app.answersArray.reduce(function (allAnswers, answer) {
