@@ -281,7 +281,8 @@ body {
     @media (max-width: $third-breakpoint) {
       background-image: linear-gradient(to right, rgba(232,217,150,0.3), rgba(232,217,150,0.3)), url('../images/paper_@2X.png');
       color: $charcoal;
-      cursor: pointer; 
+      cursor: pointer;
+      animation: none; 
     }
   }
   &--first {
