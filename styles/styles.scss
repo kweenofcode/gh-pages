@@ -1,0 +1,384 @@
+@import "setup";
+@import "utils";
+@import "typography";
+
+body {
+  background-image: linear-gradient(to right, rgba(125, 79, 80,0.5) 30%, lighten($main-red, 30) 30%), url('../images/old_moon_@2X.jpg');   
+}
+.card-wrapper {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  max-height: 100vh;
+}
+.card, .question0 {
+  background-image: linear-gradient(to right, rgba(125, 79, 80,0.5) 30%, lighten($main-red, 30) 30%), url('../images/old_moon_@2X.jpg');
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+.card {
+  right: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.list {
+  list-style: none;
+  display: flex;
+  margin: 50px auto;
+  justify-content: space-around;
+}
+.wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+  @media (max-width: $first-breakpoint) {
+    max-width: 80%;
+  }
+}
+.question__content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: flex-end;
+  align-items: center;
+}
+.arrow {
+  position: absolute;
+  bottom: 0; 
+  opacity: 0.8;  
+  min-width: 250px;
+  @media (max-width: $first-breakpoint) {
+    min-width: 160px;
+  }
+  @media (max-width: $third-breakpoint) {
+    display: none;
+  }
+}
+.arrow-1 {
+  top: -180px;
+  left: -30px;
+  transform: rotateX(0) rotateY(180deg);
+  @media (max-width: $first-breakpoint) {
+    top: -130px;
+    left: 0px;
+  }
+}
+.arrow-2 {
+  top: 285px;
+  left: 150px;
+  transform: rotateX(180deg); 
+  @media (max-width: $first-breakpoint) {
+    top: 210px;
+    left: 115px;
+  }
+  @media (max-width: $second-breakpoint) {
+    top: 160px;
+  }
+}
+.options {
+  flex: 0 0 25%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  &__image {
+    position: relative;
+    background-image: linear-gradient(to right, rgba(232,217,150,0.3), rgba(232,217,150,0.3)), url('../images/paper_@2X.png');
+    border-radius: 50%;
+    padding: 40px 0;
+    min-width: 400px;
+    height: 400px;
+    @media (max-width: $first-breakpoint) {
+      top: 0;
+      height: 300px;
+      min-width: 300px;
+      left: 100px;
+    }
+    @media (max-width: $second-breakpoint) {
+      height: 250px;
+      min-width: 250px;
+    }
+    @media (max-width: $third-breakpoint) {
+      min-width: 200px;
+      height: 200px;
+      left: 50px;
+    }
+    @media (max-width: $fourth-breakpoint) {
+      background: none;
+    }
+  }
+  &__results {
+    left: 0;
+  }
+  & img {
+    @media (max-width: $fourth-breakpoint) {
+      display: none;
+    }
+  }
+}
+
+.questions {
+  flex: 0 0 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0 0 0 15%;
+  &-final {
+    align-items: center;
+  }
+}
+.form {
+  position: absolute;
+  &__final {
+    font-size: 5rem;
+    font-family: $second-font;
+    text-align: center;
+    bottom: 0;
+    margin-top: 50px;
+    font-weight: 400;
+    @media (max-width: $first-breakpoint) {
+      font-size: 3.5rem;
+      text-align: center;
+    }
+    @media (max-width: $second-breakpoint) {
+      font-size: 3rem;
+    }
+    @media (max-width: $third-breakpoint) {
+      font-size: 2.6rem;
+    }
+    @media (max-width: $third-breakpoint) {
+      font-size: 1.6rem;
+    }
+  }
+}
+.question__option {
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  padding: 30px;
+  border: 3px solid $main-red;
+  border-radius: 50%;
+  color: $charcoal;
+  background: lighten(antiquewhite, 2);
+  cursor: url("../images/cursor.cur"), auto; 
+  transition: all .5s ease-in-out;
+  &:hover {      
+    background: $main-red;
+    color: antiquewhite;
+    cursor: url("../images/cursor.cur"), auto;    
+    @media (max-width: $third-breakpoint) {
+      background-image: linear-gradient(to right, rgba(232,217,150,0.3), rgba(232,217,150,0.3)), url('../images/paper_@2X.png');
+      cursor: pointer; 
+      color: $charcoal;
+    }
+  }
+  &--first {
+    left: -170px;
+    top: -210px;
+    @media (max-width: $first-breakpoint) {
+      left: -110px;
+      top: -160px;
+    }
+    @media (max-width: $third-breakpoint) {
+      left: -20px;
+    }
+    @media (max-width: $fourth-breakpoint) {
+      left: 50px;
+    }
+  }
+  &--second {
+    right: -530px;
+    top: 395px;
+    padding: 30px 35px;
+    @media (max-width: $first-breakpoint) {
+      right: -385px;
+      top: 270px;
+    }
+    @media (max-width: $second-breakpoint) {
+      top: 220px;
+    }
+    @media (max-width: $third-breakpoint) {
+      right: -240px;
+    }
+    @media (max-width: $fourth-breakpoint) {
+      right: -150px;
+      top: 200px;
+    }
+  }
+  &--third {
+    top: 395px;
+    left: -170px;
+    border-radius: 0;
+    &:hover {
+      border-radius: 0;
+    }
+    @media (max-width: $first-breakpoint) {
+      left: -110px;
+      top: 270px;
+    }
+    @media (max-width: $second-breakpoint) {
+      top: 220px;
+    }
+    @media (max-width: $third-breakpoint) {
+      left: -20px;
+    }
+    @media (max-width: $fourth-breakpoint) {
+      left: 40px;
+      top: 30px;
+    }
+  }
+  @media (max-width: $third-breakpoint) {
+    background-image: linear-gradient(to right, rgba(232,217,150,0.3), rgba(232,217,150,0.3)), url('../images/paper_@2X.png');
+    border: 3px solid $main-red;
+  }
+}
+.questions-final {
+  @media (max-width: $fourth-breakpoint) {
+    flex: 1 0 100%;
+  }
+}
+input[type=radio] {
+  display: none;
+}
+.other {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: lighten($main-red, 20);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  left: 100%;
+  &__form {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+  }
+  &__text, &__submit, &__header {
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+  }
+  &__text {
+    border: none;
+    padding: 30px 20px;
+    background: $main-beige;
+  }
+  &__submit {
+    border: none;
+    background: $main-red;
+    padding: 20px 10px;
+  }
+}
+.main-header {
+  background-image: linear-gradient(to right, rgba(125, 79, 80,0.5) 50%, lighten($main-red, 30) 50%), url('../images/old_moon_@2X.jpg');       
+  margin: 0;
+  position: absolute;
+  padding: 15px;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;  
+  justify-content: center;
+}
+.main-nav {
+  background-image: linear-gradient(to right, rgba(125, 79, 80,0.5) 50%, lighten($main-red, 30) 50%), url('../images/old_moon_@2X.jpg');    
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  &__item {
+    background-image: linear-gradient(to right, rgba(232,217,150,0.3), rgba(232,217,150,0.3)), url('../images/paper_@2X.png'); 
+    border-radius: 50%;   
+    position: relative; 
+    padding: 30px 10px;
+    margin: 10px;
+    @media(max-height: 700px) and (max-width: $third-breakpoint) {
+      background: none;
+    }
+    & img {
+    @media(max-height: 700px) and (max-width: $third-breakpoint) {
+      display: none;
+    }
+    }
+    @media (max-width: $third-breakpoint) {
+        max-width: 320px;
+    }
+    &:first-child(){
+      @media (max-width: $third-breakpoint) {
+        max-width: 320px;
+        margin-top: 150px;
+      }
+    }
+  }
+  &__title {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    @media (max-width: $third-breakpoint) {
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      background: rgba(125,79,80,0.8);
+      border-radius: 50%;
+      padding: 40px 20px;
+    }
+  }
+  @media (max-width: $third-breakpoint) {
+    flex-direction: column;
+    flex: 1 0 200px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.about__article {
+    background-image: linear-gradient(to right, rgba(232,217,150,0.3), rgba(232,217,150,0.3)), url('../images/paper_@2X.png'); 
+    padding: 50px 100px;  
+    border: 4px solid $main-red;
+    margin: 50px 0;
+    @media (max-width: $third-breakpoint) {
+      padding: 50px;
+    }
+    @media (max-width: $third-breakpoint) {
+      padding: 50px 50px;
+    }
+}
+.article__title {
+  margin: 30px 0;
+}
+.about__header {
+  padding: 50px 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 90%;
+  bottom: 0;
+  width: 100%;
+}
+.button {
+  text-decoration: none;
+  background: $main-red;
+  padding: 20px 50px;
+  color: lighten($main-beige, 10);
+  margin-bottom: 50px;
+  transition: all .3s ease-in-out;
+  &:hover {
+    color: $main-red;
+    background: lighten($main-red, 20);
+  }
+  @media (max-width: $fourth-breakpoint) {
+    padding: 10px 20px;
+  }
+}
+.final-nav{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
